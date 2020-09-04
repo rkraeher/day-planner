@@ -90,3 +90,24 @@ for (var i = 0; i < 1; i++) {
     var block = "<tr><th scope='row'>" + counter + 'AM' + "</th><td colspan='2'></td></tr>";
    $("tbody").append(block);
 };
+
+$("[data-hour='0']");   // This enables me to target specific elements with a certain data hour
+var Tr = $(tBodyArray[i]);
+    console.log($(".hours").attr("data-hour")); // Here is the attribute value that I want but it is only for the first element. 
+    console.log($(tBodyArray[1]).attr("data-hour"));        // Index and data-hour
+    console.log($(tBodyArray[0]));
+
+  
+function getBlockTime(i){
+    var dataHour = $(tBodyArray[i]).attr("data-hour");
+    console.log(dataHour);  
+}
+getBlockTime(5);        // The 5th index returns the data-hour value of 10, i.e., 10am. 
+                        //This is showing up in the console b/c line 74
+
+// The loop could also add an ID. Then I would target the ID and write a function that checks
+    // to see what the value is of the data attribute. 
+
+// I want to use the data-hour for targeting purposes. 
+
+var slide = $("tbody").children("data-hour").val();
