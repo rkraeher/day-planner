@@ -1,36 +1,26 @@
 # day-planner
-A day planner for scheduling work. 
 
+#Description
+A day planner for scheduling work appointments. The user can save events for each hour of the day. 
 
-#HW INSTRUCTIONS
+#Functionality
+The app displays the current day at the top and has blocks of time for standard business hours (9am-5pm).
+The user can type appointments and events directly into each time block and click the save button to save
+    the event in that time block for the day. Input saves to local storage and can be updated by the user.
+Time blocks are color-coded to indicate whether each block is prior to the current time, in the future, or
+indicates the current hour. 
+Users cannot schedule events for any time block that is earlier than the current hour. 
+If the user refreshes the page, saved appointments will remain visible on the scheduler until 5pm, at 
+which point the app refreshes local storage to clear the scheduler for the next day. 
+The app also has a clear button in case the user needs to clear all events for the day prior to 5pm. 
 
-Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
-You'll need to use the Moment.js library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+#Technologies
+This app was created with dynamically updated HTML and CSS.
+The app uses Bootstrap CDN and the Moment.js library.  
+The app content and styles are powered by jQuery and JavaScript.
+This app will run in the browser.
 
-User Story
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-
-Acceptance Criteria
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-
-#NOTES
-
-
-
-#Backup CODE
-
+#Created by
+Rudi Kraeher
+September 2020
   

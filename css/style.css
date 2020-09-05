@@ -70,3 +70,11 @@ body {
     transition: all .3s ease-in-out;
   }
   
+  .clearBtn {
+    border-left: 1px solid black;
+    background-color: black;
+    color: white;
+    margin: auto;
+    padding: auto;
+    align-self: auto;
+  }
