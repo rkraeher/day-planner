@@ -5,28 +5,13 @@ var currentHour = moment().hours();
 console.log("Current time is: " + currentHour + " hrs");
 
 $(".saveBtn").on("click", function(){
-    var scheduledInput = $(this).siblings(".description").val();
+    localStorage.removeItem(scheduledBlock);
     
+    var scheduledInput = $(this).siblings(".description").val();   
     var scheduledBlock = $(this).parent().attr("id");
-    var stringId = JSON.stringify(scheduledBlock);      // If this works just stringify above
-        console.log(stringId);
-        console.log(scheduledInput);
-        console.log(scheduledBlock);
-
-    if (!localStorage.getItem(stringId)){       //!! Data goes away upon reload. 
-
-    var savedEvent = localStorage.setItem(stringId, scheduledInput);
-    var retrieveEvent = localStorage.getItem(stringId);
-        console.log(savedEvent);        // This shows up as undefined. Is it broken because my key shows up as a number, even when I stringify it?
-        console.log(retrieveEvent);
-
-        // localStorage.setItem(key,value); to set
-        // localStorage.getItem(key); to get.
-        // key and value must be strings
-
-    // $(this).text(retrieveEvent);      // Set the text
+ 
+    localStorage.setItem(scheduledBlock, scheduledInput);
        
-    }
 });
 
 function checkTime (){
@@ -46,9 +31,30 @@ function checkTime (){
 };
 checkTime();
 
+function checkStorage () {
+    $(".time-block").children(".description").each(function() {
+    if (!retrieveEvent){
+        // DO nothing
+    } else {
+    var retrieveEvent = localStorage.getItem(scheduledBlock);
+    // localStorage.setItem(scheduledBlock, scheduledInput);
+    $(this).text(retrieveEvent); 
+    
+        }
+    });
+};
+checkStorage();
+
+// var retrieveEvent = localStorage.getItem(scheduledBlock);
+        
+// $(this).siblings(".description").val(retrieveEvent); 
+
+
 // Write a function that runs checkTime at a set interval periodically. 
 
-// var blockHour = parseInt($(this).attr("id").split("-")[1]);  Not necessary since I got rid of the "hour" in front of the IDs, but do I need this for it to work as a key?
+// Only save future events
+
+// Allow it to reset the local storage
 
 
 });
